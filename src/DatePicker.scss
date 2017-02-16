@@ -1,0 +1,210 @@
+//清除浮动
+%clearFix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+  }
+}
+
+.week-picker2 {
+  position: relative;
+}
+
+.wp-pop-container {
+  position: absolute;
+  top: -290px;
+  z-index: 99;
+  width: 640px;
+  height: 290px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1500px) {
+  .wp-pop-container {
+    left: -220px;
+  }
+}
+
+.wp-weekday li {
+  list-style: none;
+  float: left;
+  width: 14.2%;
+  line-height: 30px;
+  font-size: 14px;
+  color: #36383c;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.wp-calendarBorder {
+  width: 320px;
+  height: 290px;
+  background-color: #fdfefe;
+
+  position: relative;
+}
+
+.wp-first-month {
+  position: absolute;
+  left: 0;
+}
+
+.wp-second-month {
+  border-left: 1px solid #cacacb;
+  position: absolute;
+  left: 320px;
+}
+
+.wp-headerborder {
+  padding: 0 15px;
+  text-align: center;
+  position: relative;
+  p {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 35px;
+    color: #6f7479;
+  }
+}
+
+.wp-triangle-left {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  cursor: pointer;
+  font-size: 14px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  color: #6f7479;
+
+}
+
+.wp-triangle-right {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  top: 0;
+  right: 1px;
+  cursor: pointer;
+  color: #6f7479;
+  font-size: 14px;
+}
+
+.wp-CalendarDay {
+  padding: 0 15px;
+
+  &>ul {
+    @extend %clearFix;
+
+    li {
+      position: relative;
+      height: 35px;
+      line-height: 32px;
+      text-align: center;
+      vertical-align: bottom;
+      list-style: none;
+      float: left;
+      width:35px;
+      margin-bottom: 0;
+      font-size: 14px;
+      color: #36383c;
+      margin-left:3px;
+      margin-right:3px;
+
+      span{
+        display: block;
+        width: 28px;
+        height: 28px;
+        margin: 3.5px;
+      }
+    }
+
+  }
+}
+
+.wp-day-hover:hover {
+  cursor: pointer;
+  span{
+    background-color: #d2fbc9;
+    border-radius:30px;
+    color: #6f7479;
+  }
+}
+
+.wp-week-hover:hover{
+  cursor: pointer;
+  span{
+    background-color: #5ecc49;
+    border-radius:30px;
+    color:#fff;
+  }
+}
+
+.first-week-chosen{
+  span{
+    background-color: #5ecc49 !important;
+    border-radius:30px;
+    color:#fff !important;
+  }
+}
+
+.week-chosen span{
+  background-color: #5ecc49;
+  cursor: pointer;
+  border-radius:30px;
+  color:#fff;
+}
+
+.week-new-hover span{
+  background-color: #d2fbc9;
+  cursor: pointer;
+  border-radius:30px;
+  color:#6f7479;
+}
+
+.wp-weekday {
+  margin: 0 15px;
+  background-color: #f2f2f2;
+  & > ul {
+    @extend %clearFix;
+  }
+}
+
+.wp-CalendarDay .wp-day-disable {
+  color: #aaaaaa;
+}
+
+//显示框
+.wp-show-box {
+  width: inherit;
+  height: 36px;
+  line-height: 36px;
+  background: url("./images/CWdateIcon.png") no-repeat 95% 10px #ffffff;
+  & > span {
+    padding-left: 10px;
+    color: grey;
+  }
+}
+
+@media (max-width: 1440px) {
+  .wp-show-box{
+    height: 26px;
+    line-height: 26px;
+    background: url("./images/CWdateIcon.png") no-repeat 95% 6px #ffffff;
+    & > span {
+      font-size: 12px;
+    }
+  }
+}
+
+//全局重置A标签下划线
+a:focus,a:hover{
+  text-decoration: none !important;
+}
