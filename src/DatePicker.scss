@@ -1,3 +1,11 @@
+dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, legend, li, p, pre, select, span, textarea, ul{
+  padding:0;
+  margin:0;
+  list-style: none;
+  vertical-align: top;
+  outline: 0;
+}
+
 //清除浮动
 %clearFix {
   &:after {
@@ -9,13 +17,17 @@
   }
 }
 
+.hide{
+  display:none;
+}
+
 .week-picker2 {
   position: relative;
 }
 
 .wp-pop-container {
   position: absolute;
-  top: -290px;
+  top: 36px;
   z-index: 99;
   width: 640px;
   height: 290px;
@@ -184,6 +196,8 @@
 //显示框
 .wp-show-box {
   width: inherit;
+  max-width: 300px;
+  border:solid 1px;
   height: 36px;
   line-height: 36px;
   background: url("./images/CWdateIcon.png") no-repeat 95% 10px #ffffff;
